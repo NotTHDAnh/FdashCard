@@ -44,7 +44,7 @@ JavaFX is **not bundled with Java** and is **not included in this repository**.
 1. Download JavaFX from:  
    https://openjfx.io/
 2. Extract it somewhere on your machine  
-   (example: `C:\javafx`)
+   (example: `C:\javafx\lib`)
 
 ---
 
@@ -69,7 +69,7 @@ JavaFX is **not bundled with Java** and is **not included in this repository**.
 #### Run
 
 ```bash
-java --module-path "C:\path\to\javafx" --add-modules javafx.controls,javafx.fxml -jar FlashCard.jar
+java --module-path "C:\path\to\javafx\lib" --add-modules javafx.controls,javafx.fxml -jar FlashCard.jar
 
 ```
 
@@ -77,7 +77,7 @@ java --module-path "C:\path\to\javafx" --add-modules javafx.controls,javafx.fxml
 #### Run
 ```bash
 java \
---module-path /path/to/javafx \
+--module-path /path/to/javafx/lib \
 --add-modules javafx.controls,javafx.fxml \
 -jar \
 FlashCard.jar
