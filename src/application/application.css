@@ -1,0 +1,219 @@
+/*  
+ * #2F5BFF is dark blue 
+ * #5FB3E8 is light blue
+ */
+ .Background{
+ 	-fx-background-color: #EEF2FF;
+ }
+.btn-pill{
+    -fx-background-color: #4f6cff;
+    -fx-background-radius: 999;
+
+    -fx-text-fill: white;
+    -fx-font-size: 17px;
+    -fx-font-weight: 600;
+    -fx-font-family: Anton;
+
+    -fx-padding: 12 22;
+    -fx-cursor: hand;
+
+    -fx-effect: dropshadow(gaussian,
+        rgba(79,108,255,0.45),
+        20, 0.3, 0, 6
+    );
+}
+
+.btn-pill:hover{
+	-fx-background-color: #5f73ff;
+}
+
+.btn-pill:pressed{
+	-fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+}
+
+#homeButton{
+	-fx-background-color: transparent;
+	-fx-padding:6;
+	-fx-cursor:hand;
+	-fx-text-fill: #6FA3D9;
+}
+#homeButton:hover{
+    -fx-background-color: rgba(79, 99, 255, 0.12);
+    -fx-background-radius: 8;	
+}
+#homeButton:pressed{
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+.homeTitle{
+	-fx-font-family: "thugolatz";
+	-fx-font-size: 60px;
+	-fx-text-fill: #3B5F9E;
+}
+/*styling for the title of createMenu */
+#createHomeTitle{
+	-fx-padding: 8 0;
+	-fx-font-family: "thugolatz";
+	-fx-font-size:40px;
+	-fx-text-fill: #6FA3D9;
+	
+}
+.error{
+	-fx-text-fill: red;
+}
+/* base look */
+.text-field,
+.text-area {
+    -fx-background-color: trasparent;
+    -fx-background-radius: 10;
+    -fx-border-color: transparent;
+    -fx-border-radius: 10;
+    -fx-background-insets: 0;
+    -fx-font-size: 16px;
+}
+
+/* TextArea inner region */
+.text-field,
+.text-area .content {
+    -fx-background-color:#F6F7FB;
+     -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 10;
+}
+
+/* focus ring like the screenshot */
+.text-field:focused,
+.text-area:focused {
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 10;
+    -fx-effect:null;
+}
+
+/* placeholder color */
+.text-field:empty,
+.text-area:empty {
+    -fx-prompt-text-fill: #DEE6FF;
+}
+
+#title, #description{
+	-fx-background-color: white;
+}
+#description .content{
+	-fx-background-color: white;
+}
+
+.btn-delete{
+	-fx-background-color: transparent;
+}
+.btn-delete:hover{
+    -fx-background-color: #FF00004D;
+    -fx-background-radius: 8;	
+}
+
+.HBox{
+	-fx-background-color: white;
+	-fx-background-radius:  10;
+	-fx-padding:13 10 13 10;
+}
+
+#listContainer{
+	-fx-padding:10;
+	-fx-background-color: #EEF2FF;
+	-fx-border-color: transparent;
+}
+#cardsScroll,#SetPane{
+	-fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent; 
+}
+
+
+#cardsScroll, #SetPan :focused {
+    -fx-border-color: transparent;
+    -fx-effect: null;
+}
+
+#cardsScroll,#SetPane  .viewport {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.text-area .scroll-bar {
+    -fx-opacity: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+    -fx-padding: 0;
+}
+
+.text-area .scroll-bar:vertical,
+.text-area .scroll-bar:horizontal {
+    -fx-scale-x: 0;
+    -fx-scale-y: 0;
+}
+
+.error{
+	-fx-border-width: 3;
+	-fx-border-radius: 10;
+	-fx-background-radius: 10;
+}
+.text-field.error .content,
+.text-field.error .viewport {
+    -fx-border-color: transparent;
+}
+.btn-switch {
+    -fx-background-color: white;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+
+    -fx-border-color: #e0e6ff;
+    -fx-border-width: 1.5;
+
+    -fx-padding: 10 18;
+    -fx-cursor: hand;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 10, 0.3, 0, 3);
+}
+
+.btn-switch:hover {
+    -fx-background-color: #eef2ff;
+}
+
+.btn-switch:pressed {
+    -fx-scale-x: 0.96;
+    -fx-scale-y: 0.96;
+}
+
+/* disabled state */
+.btn-switch:disabled {
+    -fx-opacity: 0.4;
+    -fx-effect: null;
+}
+#cardPane {
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-padding: 28;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 28, 0.25, 0, 8);
+    -fx-border-color: rgba(230,236,255,0.9);
+    -fx-border-radius: 22;
+    -fx-border-width: 1;
+}
+#cardPane:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.14), 34, 0.25, 0, 10);
+}
+.menu-item {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 16 20;
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 14;
+    -fx-cursor: hand;
+}
+
+.menu-item:hover {
+    -fx-background-color: #f6f7fb;
+}

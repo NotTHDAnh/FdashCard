@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="510.0" prefWidth="427.0" styleClass="Background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ListOfSetController">
+   <children>
+      <Label fx:id="createHomeTitle" alignment="CENTER" layoutX="46.0" layoutY="14.0" prefHeight="63.0" prefWidth="378.0" style="-fx-font-weight: bold;" styleClass="homeTitle" text="Select a Deck">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Label fx:id="emptyLabel" alignment="CENTER" layoutX="50.0" layoutY="275.0" prefHeight="48.0" prefWidth="329.0" style="-fx-font-weight: bold;" text="No decks yet!">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="switchToCreate" alignment="CENTER" layoutX="125.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToCreate" styleClass="btn-pill" text="Create new Deck" />
+      <ImageView fx:id="emptyIcon" fitHeight="150.0" fitWidth="200.0" layoutX="116.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="emptyText" layoutX="100.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create new Decks to start studying">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+            <Button fx:id="homeButton" layoutX="17.0" layoutY="22.0" mnemonicParsing="false" onAction="#switchToHomeScreen" onMouseClicked="#switchToHomeScreen" prefHeight="46.0" prefWidth="57.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+      <ScrollPane fx:id="SetPane" fitToWidth="true" hbarPolicy="NEVER" layoutX="36.0" layoutY="103.0" prefHeight="376.0" prefWidth="356.0" vbarPolicy="NEVER">
+         <content>
+            <VBox fx:id="listContainer" prefHeight="378.0" prefWidth="354.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
