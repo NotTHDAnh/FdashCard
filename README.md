@@ -20,7 +20,7 @@ This project was developed as a **side project during my second year of universi
 
 ##  Technologies Used
 
-- **Java 17+**
+- **Java 25**
 - **JavaFX**
 - **FXML**
 - **CSS**
@@ -32,7 +32,7 @@ This project was developed as a **side project during my second year of universi
 
 To run this project, you need:
 
-- **Java JDK 26 or newer**
+- **Java JDK 25 or newer**
 - **JavaFX SDK** (included in the project)
 - **JavaFX 25** Required
 
