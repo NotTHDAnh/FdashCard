@@ -23,7 +23,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		MainController mainController = new MainController();
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeScreen.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/HomeScreen.fxml"));
 		Parent root = loader.load();
 		stage.setTitle("FlashCard");
 		HomeScreenController controller = loader.getController();
