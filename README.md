@@ -46,13 +46,6 @@ To run this project, you need:
 ├── README.md
 └── .gitignore
 
-## ▶️ How to Compile
-
-```bash
-javac --module-path lib \
---add-modules javafx.controls,javafx.fxml \
--d bin \
-$(find src -name "*.java")
 ▶️ How to Run
 bash
 Copy code
