@@ -28,7 +28,7 @@ This project was developed as a **side project during my second year of universi
 
 ---
 
-## 📦 Requirements
+##  Requirements
 
 To run this project, you need:
 
@@ -48,6 +48,18 @@ No additional installation of JavaFX is required.
 ├── lib/            # JavaFX libraries
 ├── resources/      # Images, fonts
 └── README.md
+```
+
+---
+
+##  How to Compile
+
+```bash
+javac \
+--module-path lib \
+--add-modules javafx.controls,javafx.fxml \
+-d bin \
+$(find src -name "*.java")
 ```
 
 ---
