@@ -95,5 +95,4 @@ This is a **learning-focused project**, not production software.
 
 ## 👤 Author
 
-Second-year university student  
 Side project for learning Java & JavaFX
