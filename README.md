@@ -1,24 +1,24 @@
 # FdashCard 
 
-FdashCard is a desktop flashcard application built with **JavaFX**.  
-It allows users to create flashcard sets, add cards, and study them through a clean and modern interface.
+FdashCard is a desktop flashcard application built using **JavaFX**.  
+It allows users to create flashcard sets, add cards, and study them with a clean and modern interface.
 
-This project was developed as a **side project during my second year of university**, mainly to practice **Java**, **JavaFX**, and basic UI/UX design.
+This project was developed as a **side project during my second year of university**, mainly to practice **Java**, **JavaFX**, and UI/UX design.
 
 ---
 
-## ✨ Features
+##  Features
 
 - Create and manage flashcard sets
 - Add, delete, and study flashcards
 - Card flip animation (front / back)
 - Modern UI styled with JavaFX CSS
-- Scrollable lists
+- Scrollable card lists
 - Input validation with visual feedback
 
 ---
 
-## 🛠 Technologies Used
+##  Technologies Used
 
 - **Java 17+**
 - **JavaFX**
@@ -33,39 +33,55 @@ This project was developed as a **side project during my second year of universi
 To run this project, you need:
 
 - **Java JDK 17 or newer**
-- **JavaFX SDK for your operating system**
+- **JavaFX SDK** (included in the project)
+
+No additional installation of JavaFX is required.
+
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
+```
 .
-├── src/ # Source code
-├── resources/ # Images, fonts, CSS
-├── bin/ # Compiled output (generated locally)
-├── lib/ # JavaFX SDK (local only, not committed)
-├── README.md
-└── .gitignore
+├── bin/            # Compiled .class files (Eclipse output)
+├── src/            # Source code
+├── lib/            # JavaFX libraries
+├── resources/      # Images, fonts
+└── README.md
+```
 
-## ▶️ How to Compile
+---
+
+##  How to Run
+
+From the **project root directory**, run:
 
 ```bash
-javac \
---module-path lib \
---add-modules javafx.controls,javafx.fxml \
--d bin \
-$(find src -name "*.java")
-▶️ How to Run
-bash
-Copy code
 java \
 --module-path lib \
 --add-modules javafx.controls,javafx.fxml \
 -cp bin \
 application.Main
-🎯 Purpose
-This project was created to practice JavaFX UI development, scene switching, and basic application architecture.
-It is not intended for production use.
+```
 
-👤 Author
-Second-year university student
+> Make sure you execute this command **inside the project folder**.
+
+---
+
+##  Purpose of This Project
+
+This project was created to:
+
+- Practice **JavaFX UI development**
+- Learn **scene switching and controller communication**
+- Improve **UI/UX design skills**
+- Apply **clean code and MVC principles**
+
+This is a **learning-focused project**, not production software.
+
+---
+
+## 👤 Author
+
+Second-year university student  
 Side project for learning Java & JavaFX
