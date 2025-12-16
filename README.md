@@ -34,15 +34,15 @@ To run this project, you need:
 
 - **Java JDK 17 or newer**
 - **JavaFX SDK for your operating system**
-
+---
 
 ## 📂 Project Structure
 
 .
 ├── src/ # Source code
 ├── resources/ # Images, fonts, CSS
-├── bin/ # Compiled output 
-├── lib/ # JavaFX SDK
+├── bin/ # Compiled output (generated locally)
+├── lib/ # JavaFX SDK (local only, not committed)
 ├── README.md
 └── .gitignore
 
