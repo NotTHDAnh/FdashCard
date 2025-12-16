@@ -32,10 +32,19 @@ This project was developed as a **side project during my second year of universi
 
 To run this project, you need:
 
-- **Java JDK 17 or newer**
+- **Java JDK 26 or newer**
 - **JavaFX SDK** (included in the project)
+- **JavaFX 25** Required
 
-No additional installation of JavaFX is required.
+This application **requires JavaFX** and will NOT run without it.
+
+JavaFX is **not bundled with Java** and is **not included in this repository**.
+
+### Install JavaFX
+1. Download JavaFX from:  
+   https://openjfx.io/
+2. Extract it somewhere on your machine  
+   (example: `C:\javafx`)
 
 ---
 
@@ -52,32 +61,51 @@ No additional installation of JavaFX is required.
 
 ---
 
-##  How to Compile
+---
+##  Compile & Run
+
+###  Windows (CMD / PowerShell)
+
+#### Compile
+```bash
+javac ^
+--module-path "C:\javafx\lib" ^
+--add-modules javafx.controls,javafx.fxml ^
+-d bin ^
+src\application\*.java src\model\*.java src\Controller\*.java src\utils\*.java
+```
+
+
+#### Run
+
+```bash
+java ^
+--module-path "C:\javafx\lib" ^
+--add-modules javafx.controls,javafx.fxml ^
+-cp bin ^
+application.Main
+```
+
+### Linux, MacOS
+
+#### Compile
 
 ```bash
 javac \
---module-path lib \
+--module-path /path/to/javafx/lib \
 --add-modules javafx.controls,javafx.fxml \
 -d bin \
 $(find src -name "*.java")
 ```
 
----
-
-##  How to Run
-
-From the **project root directory**, run:
-
+#### Run
 ```bash
 java \
---module-path lib \
+--module-path /path/to/javafx/lib \
 --add-modules javafx.controls,javafx.fxml \
 -cp bin \
 application.Main
 ```
-
-> Make sure you execute this command **inside the project folder**.
-
 ---
 
 ##  Purpose of This Project
