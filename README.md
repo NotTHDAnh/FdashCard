@@ -46,6 +46,14 @@ To run this project, you need:
 ├── README.md
 └── .gitignore
 
+## ▶️ How to Compile
+
+```bash
+javac \
+--module-path lib \
+--add-modules javafx.controls,javafx.fxml \
+-d bin \
+$(find src -name "*.java")
 ▶️ How to Run
 bash
 Copy code
@@ -59,5 +67,5 @@ This project was created to practice JavaFX UI development, scene switching, and
 It is not intended for production use.
 
 👤 Author
-Me
+Second-year university student
 Side project for learning Java & JavaFX
