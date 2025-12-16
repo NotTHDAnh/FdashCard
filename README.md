@@ -21,7 +21,7 @@ This project was developed as a **side project during my second year of universi
 ##  Technologies Used
 
 - **Java 25**
-- **JavaFX**
+- **JavaFX 25**
 - **FXML**
 - **CSS**
 - **MVC architecture**
@@ -56,6 +56,7 @@ JavaFX is **not bundled with Java** and is **not included in this repository**.
 ├── src/            # Source code
 ├── lib/            # JavaFX libraries
 ├── resources/      # Images, fonts
+├── FlashCard.jar   # executable jar file
 └── README.md
 ```
 
@@ -64,47 +65,22 @@ JavaFX is **not bundled with Java** and is **not included in this repository**.
 ---
 ##  Compile & Run
 
-###  Windows (CMD / PowerShell)
-
-#### Compile
-```bash
-javac ^
---module-path "C:\javafx\lib" ^
---add-modules javafx.controls,javafx.fxml ^
--d bin ^
-src\application\*.java src\model\*.java src\Controller\*.java src\utils\*.java
-```
-
-
+###  Windows (CMD)
 #### Run
 
 ```bash
-java ^
---module-path "C:\javafx\lib" ^
---add-modules javafx.controls,javafx.fxml ^
--cp bin ^
-application.Main
+java --module-path "C:\path\to\javafx" --add-modules javafx.controls,javafx.fxml -jar FlashCard.jar
+
 ```
 
 ### Linux, MacOS
-
-#### Compile
-
-```bash
-javac \
---module-path /path/to/javafx/lib \
---add-modules javafx.controls,javafx.fxml \
--d bin \
-$(find src -name "*.java")
-```
-
 #### Run
 ```bash
 java \
---module-path /path/to/javafx/lib \
+--module-path /path/to/javafx \
 --add-modules javafx.controls,javafx.fxml \
--cp bin \
-application.Main
+-jar \
+FlashCard.jar
 ```
 ---
 
@@ -122,5 +98,6 @@ This is a **learning-focused project**, not production software.
 ---
 
 ## 👤 Author
+Me
 
 Side project for learning Java & JavaFX
