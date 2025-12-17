@@ -19,13 +19,13 @@
       <TextField fx:id="title" layoutX="36.0" layoutY="96.0" prefHeight="26.0" prefWidth="354.0" promptText="Title" style="-fx-border-color: transparent;" />
       <TextArea fx:id="description" layoutX="38.0" layoutY="137.0" prefHeight="53.0" prefWidth="354.0" promptText="Add Description...." />
       <Button fx:id="addButton" layoutX="36.0" layoutY="441.0" mnemonicParsing="false" onAction="#addCard" onMouseClicked="#addCard" styleClass="btn-pill" text="Add more card" />
-      <ScrollPane fx:id="cardsScroll" hbarPolicy="NEVER" layoutX="23.0" layoutY="209.0" prefHeight="219.0" prefWidth="382.0" vbarPolicy="NEVER">
+      <ScrollPane fx:id="cardsScroll" hbarPolicy="NEVER" layoutX="24.0" layoutY="232.0" prefHeight="172.0" prefWidth="382.0" vbarPolicy="NEVER">
          <content>
-            <VBox fx:id="listContainer" prefHeight="225.0" prefWidth="353.0" spacing="10" />
+            <VBox fx:id="listContainer" prefHeight="174.0" prefWidth="353.0" spacing="10" />
          </content>
       </ScrollPane>
       <Button fx:id="createSet" layoutX="281.0" layoutY="441.0" mnemonicParsing="false" onAction="#onCreate" prefHeight="26.0" prefWidth="109.0" styleClass="btn-pill" text="Create" />
-      <Label fx:id="errorMsg" layoutX="32.0" layoutY="429.0" prefHeight="18.0" prefWidth="361.0" />
+      <Label fx:id="errorMsg" layoutX="33.0" layoutY="415.0" prefHeight="18.0" prefWidth="361.0" />
             <Button fx:id="homeButton" layoutX="17.0" layoutY="22.0" mnemonicParsing="false" onAction="#switchToHomeScreen" onMouseClicked="#switchToHomeScreen" prefHeight="46.0" prefWidth="57.0">
                <font>
                   <Font size="20.0" />
