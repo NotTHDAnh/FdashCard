@@ -60,8 +60,8 @@ public class CreateController extends SceneController {
 		termField.setPromptText("Term");
 		termField.setPrefWidth(120);
 		termField.setMinWidth(120);
-		termField.setMinHeight(35);
-		termField.setMaxHeight(35);
+		termField.setMinHeight(50);
+		termField.setMaxHeight(50);
 		termField.setAlignment(Pos.CENTER_LEFT);
 
 		termField.setStyle("-fx-border-color: transparent;");
@@ -73,8 +73,8 @@ public class CreateController extends SceneController {
 		defField.setPrefWidth(120);
 		defField.setMinWidth(170);
 		defField.setPrefRowCount(2);;
-		defField.setMinHeight(35);
-		defField.setMaxHeight(36);
+		defField.setMinHeight(50);
+		defField.setMaxHeight(60);
 
 		defField.setStyle("-fx-padding:0 2 0 2;");
 		
@@ -136,7 +136,7 @@ public class CreateController extends SceneController {
 		}
 		if(!ok) {
 			errorMsg.setVisible(true);
-			if(errorMsg != null) errorMsg.setText("* Please fill all the fields.");
+			if(errorMsg != null) errorMsg.setText("* Please fill all the fields,each fields should be 1500 characters");
 		}
 		else {
 			errorMsg.setVisible(false);

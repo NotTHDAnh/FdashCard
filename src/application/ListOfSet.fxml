@@ -21,7 +21,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="switchToCreate" alignment="CENTER" layoutX="125.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToCreate" styleClass="btn-pill" text="Create new Deck" />
+      <Button fx:id="switchToCreate" alignment="CENTER" layoutX="137.0" layoutY="401.0" mnemonicParsing="false" onAction="#switchToCreate" styleClass="btn-pill" text="Create new Deck" />
       <ImageView fx:id="emptyIcon" fitHeight="150.0" fitWidth="200.0" layoutX="116.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" />
       <Text fx:id="emptyText" layoutX="100.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create new Decks to start studying">
          <font>
@@ -33,9 +33,9 @@
                   <Font size="20.0" />
                </font>
             </Button>
-      <ScrollPane fx:id="SetPane" fitToWidth="true" hbarPolicy="NEVER" layoutX="36.0" layoutY="103.0" prefHeight="376.0" prefWidth="356.0" vbarPolicy="NEVER">
+      <ScrollPane fx:id="SetPane" fitToWidth="true" hbarPolicy="NEVER" layoutX="38.0" layoutY="115.0" prefHeight="295.0" prefWidth="356.0" vbarPolicy="NEVER">
          <content>
-            <VBox fx:id="listContainer" prefHeight="378.0" prefWidth="354.0" />
+            <VBox fx:id="listContainer" prefHeight="293.0" prefWidth="354.0" />
          </content>
       </ScrollPane>
    </children>

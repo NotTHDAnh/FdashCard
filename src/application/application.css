@@ -149,7 +149,7 @@
     -fx-padding: 0;
 }
 
-.text-area .scroll-bar:vertical,
+
 .text-area .scroll-bar:horizontal {
     -fx-scale-x: 0;
     -fx-scale-y: 0;

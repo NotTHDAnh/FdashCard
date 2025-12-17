@@ -96,6 +96,7 @@ public class ListOfSetController extends SceneController{
 				deleteBtn.setGraphic(icon);
 				deleteBtn.setOnAction(ev -> {
 					listContainer.getChildren().remove(row);
+					controller.deleteSet(cardSet.getId());
 					if(listContainer.getChildren().isEmpty()) {
 						listContainer.setVisible(false);
 						SetPane.setVisible(false);
