@@ -33,7 +33,7 @@ This project was developed as a **side project during my second year of universi
 To run this project, you need:
 
 - **Java JDK 25 or newer**
-- **JavaFX SDK** (included in the project)
+- **JavaFX SDK**
 - **JavaFX 25** Required
 
 This application **requires JavaFX** and will NOT run without it.
