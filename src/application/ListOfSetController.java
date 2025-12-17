@@ -107,6 +107,7 @@ public class ListOfSetController extends SceneController{
 				});
 				row.getChildren().addAll(btn,deleteBtn);
 				listContainer.getChildren().add(row);
+				listContainer.setSpacing(10);
 			}
 		}
 	}
