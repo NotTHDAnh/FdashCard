@@ -54,7 +54,6 @@ JavaFX is **not bundled with Java** and is **not included in this repository**.
 .
 ├── bin/            # Compiled .class files (Eclipse output)
 ├── src/            # Source code
-├── lib/            # JavaFX libraries
 ├── resources/      # Images, fonts
 ├── FlashCard.jar   # executable jar file
 └── README.md
