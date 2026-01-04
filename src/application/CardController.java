@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 
 import Controller.MainController;
+import Controller.flashCardController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
@@ -26,10 +27,12 @@ public class CardController extends SceneController{
 	@FXML private  Label nameOfSet;
 	@FXML private Label currentCardIndex;
 	@FXML private Label desc;
+	@FXML private Button editButton;
 	private CardSet set = new CardSet();
 	private Card currentCard = new Card();
 	private int index = 0;
 	MainController controller;
+	private flashCardController fcCtrl;
 	
 	@FXML
 	public void initialize() {
@@ -41,16 +44,28 @@ public class CardController extends SceneController{
 		icon.setFitHeight(24);
 		icon.setPreserveRatio(true);
 		homeButton.setGraphic(icon);
+		Image img2 = new Image(getClass().getResourceAsStream("/images/edit.png"));
+		ImageView icon2 = new ImageView(img);
+		icon2.setFitWidth(24);
+		icon2.setFitHeight(24);
+		icon2.setPreserveRatio(true);
+		icon2.setImage(img2);
+		editButton.setGraphic(icon2);
 	}
 	
 	public void switchToHomeScreen(ActionEvent e) throws IOException{
-		switchToScene(e, "/application/HomeScreen.fxml",(HomeScreenController c)-> c.setController(controller));
+		switchToScene(e, "/application/HomeScreen.fxml",(HomeScreenController c)-> c.setController(controller,fcCtrl));
 	}
 	
-	public void setCardSets(CardSet set,MainController controller) {
+	public void switchToUpdate(ActionEvent e) throws IOException{
+		switchToScene(e, "Editing.fxml", (UpdateController c)->c.setCardSets(controller,fcCtrl, index));
+	}
+	
+	public void setCardSets(CardSet set,MainController controller,flashCardController fcCtrl,int index) {
 		this.set = set;
 		this.controller = controller;
-		currentCard = set.getListOfCard().getFirst();
+		this.fcCtrl = fcCtrl;
+		currentCard = set.getListOfCard().get(index);
 		flashCardText.setText(currentCard.getHint());
 		currentCardIndex.setText((index+ 1) + "/" + (set.getListOfCard().size()));
 		nameOfSet.setText(set.getName() );

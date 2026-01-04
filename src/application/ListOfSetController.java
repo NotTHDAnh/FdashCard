@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.List;
 
 import Controller.MainController;
+import Controller.flashCardController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -18,6 +19,7 @@ import model.CardSet;
 public class ListOfSetController extends SceneController{
 	private List<CardSet> set;
 	private MainController controller;
+	private flashCardController fcCtrl;
 	@FXML private VBox listContainer;
 	@FXML private Label emptyLabel;
 	@FXML private Text emptyText;
@@ -29,15 +31,15 @@ public class ListOfSetController extends SceneController{
  
 	
 	public void switchToCreate(ActionEvent e) throws IOException{
-		switchToScene(e, "CreateMenu.fxml",(CreateController c)-> c.setMainController(controller));
+		switchToScene(e, "CreateMenu.fxml",(CreateController c)-> c.setMainController(controller,fcCtrl));
 	}
 	
 	public void switchToLoaded(ActionEvent e) throws IOException{
-		switchToScene(e, "Cards.fxml",(CardController c)->c.setCardSets(chosenSet,controller));
+		switchToScene(e, "Cards.fxml",(CardController c)->c.setCardSets(chosenSet,controller,fcCtrl,0));
 	}
 
 	public void switchToHomeScreen(ActionEvent e) throws IOException{
-		switchToScene(e, "/application/HomeScreen.fxml",(HomeScreenController c)-> c.setController(controller));
+		switchToScene(e, "/application/HomeScreen.fxml",(HomeScreenController c)-> c.setController(controller,fcCtrl));
 	}
 	
 	@FXML public void initialize() {
@@ -57,8 +59,9 @@ public class ListOfSetController extends SceneController{
 		SetPane.setVisible(false);
 	}
 	
-	public void setCardSetController(MainController controller) {
+	public void setCardSetController(MainController controller,flashCardController fcCtrl) {
 		this.controller = controller;
+		this.fcCtrl = fcCtrl;
 		this.set = controller.getListOfSet();
 		if(!set.isEmpty()) {
 			SetPane.setVisible(true);

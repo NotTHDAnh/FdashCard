@@ -23,11 +23,12 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		MainController mainController = new MainController();
+		flashCardController fcCtrl = new flashCardController();
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/HomeScreen.fxml"));
 		Parent root = loader.load();
 		stage.setTitle("FlashCard");
 		HomeScreenController controller = loader.getController();
-		controller.setController(mainController);
+		controller.setController(mainController,fcCtrl);
 
 		for (String f : fonts) {
 		    Font.loadFont(getClass().getResourceAsStream(f), 12);

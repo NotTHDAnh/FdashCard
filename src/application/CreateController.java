@@ -40,7 +40,7 @@ public class CreateController extends SceneController {
 	}
 
 	public void switchToHomeScreen(ActionEvent e) throws IOException{
-		switchToScene(e, "/application/HomeScreen.fxml",(HomeScreenController c)-> c.setController(MainCtrl));
+		switchToScene(e, "/application/HomeScreen.fxml",(HomeScreenController c)-> c.setController(MainCtrl,fcCtrl));
 	}
 	
 	@FXML public void initialize() {
@@ -62,7 +62,7 @@ public class CreateController extends SceneController {
 		termField.setMinWidth(120);
 		termField.setMinHeight(50);
 		termField.setMaxHeight(50);
-		termField.setAlignment(Pos.CENTER_LEFT);
+		termField.setAlignment(Pos.TOP_LEFT);
 
 		termField.setStyle("-fx-border-color: transparent;");
 		termField.setStyle("-fx-padding: 0 2 0 2;");
@@ -75,6 +75,7 @@ public class CreateController extends SceneController {
 		defField.setPrefRowCount(2);;
 		defField.setMinHeight(50);
 		defField.setMaxHeight(60);
+
 
 		defField.setStyle("-fx-padding:0 2 0 2;");
 		
@@ -102,11 +103,12 @@ public class CreateController extends SceneController {
 		row.getChildren().addAll(termField,defField,deleteBtn);
 		listContainer.getChildren().add(row);
 		if(listContainer.getChildren().size() > 1)
-			Platform.runLater(()->cardsScroll.setVvalue(1.0));
+			Platform.runLater(()->cardsScroll.setVvalue(5.0));
 	}
 	
-	void setMainController(MainController mainCtrl){
+	void setMainController(MainController mainCtrl,flashCardController fcCtrl){
 		this.MainCtrl = mainCtrl;
+		this.fcCtrl = fcCtrl;
 	}
 	
 	@FXML void onCreate(ActionEvent e) throws IOException {
@@ -155,7 +157,7 @@ public class CreateController extends SceneController {
 			}
 			fcCtrl.getListOfCard().setId(MainCtrl.getSize());
 			MainCtrl.addSet(fcCtrl.getListOfCard());
-			switchToScene(e, "Cards.fxml",(CardController c)->c.setCardSets(fcCtrl.getListOfCard(),MainCtrl));
+			switchToScene(e, "Cards.fxml",(CardController c)->c.setCardSets(fcCtrl.getListOfCard(),MainCtrl,fcCtrl,0));
 		}
 
 	}

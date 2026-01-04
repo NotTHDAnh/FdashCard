@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="513.0" prefWidth="428.0" styleClass="Background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UpdateController">
+   <children>
+      <Label styleClass="homeTitle" fx:id="editTitle" alignment="CENTER" layoutX="34.0" layoutY="27.0" prefHeight="40.0" prefWidth="361.0" style="-fx-font-weight: bold;" text="EDIT YOUR CARD">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <TextField fx:id="termField" alignment="TOP_LEFT" layoutX="37.0" layoutY="116.0" prefHeight="112.0" prefWidth="354.0" promptText="Term" style="-fx-border-color: transparent;" />
+      <TextArea fx:id="defField" layoutX="38.0" layoutY="248.0" prefHeight="112.0" prefWidth="354.0" promptText="Definition" />
+      <Button layoutX="38.0" layoutY="441.0" mnemonicParsing="false" onAction="#cancelUpdate" styleClass="btn-pill" text="Cancel" />
+      <Button  layoutX="281.0" layoutY="441.0" mnemonicParsing="false" onAction="#onSave" prefHeight="26.0" prefWidth="109.0" styleClass="btn-pill" text="Save" />
+      <Label fx:id="errorMsg" layoutX="34.0" layoutY="404.0" prefHeight="18.0" prefWidth="354.0" />
+   </children>
+</AnchorPane>
