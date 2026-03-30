@@ -43,13 +43,13 @@ public class ListOfSetController extends SceneController{
 	}
 	
 	@FXML public void initialize() {
-		Image img = new Image(getClass().getResourceAsStream("/images/home.png"));
+		Image img = new Image(getClass().getResourceAsStream("/resources/images/home.png"));
 		ImageView icon = new ImageView(img);
 		icon.setFitWidth(24);
 		icon.setFitHeight(24);
 		icon.setPreserveRatio(true);
 		homeButton.setGraphic(icon);
-		img = new Image(getClass().getResourceAsStream("/images/empty.png"));
+		img = new Image(getClass().getResourceAsStream("/resources/images/empty.png"));
 		emptyIcon.setImage(img);
 		emptyIcon.setFitWidth(175);
 		emptyIcon.setFitHeight(175);
@@ -90,7 +90,7 @@ public class ListOfSetController extends SceneController{
 				deleteBtn.getStyleClass().add("btn-delete");
 				deleteBtn.setMinSize(30, 30);
 				deleteBtn.setMaxSize(30, 30);
-				Image img = new Image(getClass().getResourceAsStream("/images/trash.png"));
+				Image img = new Image(getClass().getResourceAsStream("/resources/images/trash.png"));
 				ImageView icon = new ImageView(img);
 				icon.setFitWidth(24);
 				icon.setFitHeight(24);
@@ -100,6 +100,7 @@ public class ListOfSetController extends SceneController{
 				deleteBtn.setOnAction(ev -> {
 					listContainer.getChildren().remove(row);
 					controller.deleteSet(cardSet.getId());
+					controller.deleteSetByID(cardSet.getId());
 					if(listContainer.getChildren().isEmpty()) {
 						listContainer.setVisible(false);
 						SetPane.setVisible(false);

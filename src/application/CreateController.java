@@ -44,7 +44,7 @@ public class CreateController extends SceneController {
 	}
 	
 	@FXML public void initialize() {
-		Image img = new Image(getClass().getResourceAsStream("/images/home.png"));
+		Image img = new Image(getClass().getResourceAsStream("/resources/images/home.png"));
 		ImageView icon = new ImageView(img);
 		icon.setFitWidth(24);
 		icon.setFitHeight(24);
@@ -83,7 +83,7 @@ public class CreateController extends SceneController {
 		deleteBtn.getStyleClass().add("btn-delete");
 		deleteBtn.setMinSize(30, 30);
 		deleteBtn.setMaxSize(30, 30);
-		Image img = new Image(getClass().getResourceAsStream("/images/trash.png"));
+		Image img = new Image(getClass().getResourceAsStream("/resources/images/trash.png"));
 		ImageView icon = new ImageView(img);
 		icon.setFitWidth(24);
 		icon.setFitHeight(24);
@@ -138,7 +138,7 @@ public class CreateController extends SceneController {
 		}
 		if(!ok) {
 			errorMsg.setVisible(true);
-			if(errorMsg != null) errorMsg.setText("* Please fill all the fields,each fields should be 1500 characters");
+			if(errorMsg != null) errorMsg.setText("* Please fill all the fields,each fields should be 1500 characters max");
 		}
 		else {
 			errorMsg.setVisible(false);
@@ -151,12 +151,14 @@ public class CreateController extends SceneController {
 				TextField term = (TextField) row.getChildren().get(0);
 				TextArea def = (TextArea) row.getChildren().get(1);
 
-				Card newCard = new Card(autoIcrID, term.getText(), def.getText());
+				Card newCard = new Card(autoIcrID, term.getText(), def.getText(),MainCtrl.getSize() + 1);
 				fcCtrl.addCard(newCard);
+				fcCtrl.addNewCard(newCard,MainCtrl.getSize() + 1);
 				++autoIcrID;
 			}
-			fcCtrl.getListOfCard().setId(MainCtrl.getSize());
+			fcCtrl.getListOfCard().setId(MainCtrl.getSize() + 1);
 			MainCtrl.addSet(fcCtrl.getListOfCard());
+			MainCtrl.addNewSet(fcCtrl.getListOfCard());
 			switchToScene(e, "Cards.fxml",(CardController c)->c.setCardSets(fcCtrl.getListOfCard(),MainCtrl,fcCtrl,0));
 		}
 

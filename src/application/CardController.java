@@ -38,13 +38,13 @@ public class CardController extends SceneController{
 	public void initialize() {
 		// TODO Auto-generated constructor stub
 		cardPane.setOnMouseClicked(e -> flip(e));
-		Image img = new Image(getClass().getResourceAsStream("/images/home.png"));
+		Image img = new Image(getClass().getResourceAsStream("/resources/images/home.png"));
 		ImageView icon = new ImageView(img);
 		icon.setFitWidth(24);
 		icon.setFitHeight(24);
 		icon.setPreserveRatio(true);
 		homeButton.setGraphic(icon);
-		Image img2 = new Image(getClass().getResourceAsStream("/images/edit.png"));
+		Image img2 = new Image(getClass().getResourceAsStream("/resources/images/edit.png"));
 		ImageView icon2 = new ImageView(img);
 		icon2.setFitWidth(24);
 		icon2.setFitHeight(24);
@@ -89,7 +89,7 @@ public class CardController extends SceneController{
 	
 	public void flip(MouseEvent e) {
 	    var half1 = new javafx.animation.RotateTransition(javafx.util.Duration.millis(140), cardPane);
-	    half1.setAxis(javafx.geometry.Point3D.ZERO.add(1, 0, 0)); // Y axis
+	    half1.setAxis(javafx.geometry.Point3D.ZERO.add(1, 0, 0)); // X axis
 	    half1.setFromAngle(0);
 	    half1.setToAngle(90);
 

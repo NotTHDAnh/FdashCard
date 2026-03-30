@@ -75,7 +75,7 @@
 /* base look */
 .text-field,
 .text-area {
-    -fx-background-color: trasparent;
+    -fx-background-color: transparent;
     -fx-background-radius: 10;
     -fx-border-color: transparent;
     -fx-border-radius: 10;

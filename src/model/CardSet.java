@@ -16,6 +16,13 @@ public class CardSet {
 		listOfCard = new ArrayList<Card>();
 	} 
 	
+	public CardSet(int id,String name,String description) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.listOfCard = new ArrayList<Card>();
+	}
+	
 	public CardSet(String name,String des) {
 		id = ThreadLocalRandom.current().nextInt(1,101);
 		this.name = name;

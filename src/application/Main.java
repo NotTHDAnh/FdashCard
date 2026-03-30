@@ -17,8 +17,8 @@ import javafx.scene.text.Font;
 
 public class Main extends Application {
 	String[] fonts = {
-		    "/fonts/Anton-Regular.ttf",
-		    "/fonts/thugolatz.ttf",
+		    "/resources/fonts/Anton-Regular.ttf",
+		    "/resources/fonts/thugolatz.ttf",
 		};
 	@Override
 	public void start(Stage stage) throws Exception {

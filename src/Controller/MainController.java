@@ -1,13 +1,35 @@
 package Controller;
 
+import model.CardDao;
 import model.CardSet;
+import model.CardSetDao;
+
 import java.util.List;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MainController {
 	List<CardSet> listOfSet;
 	public MainController() {
-		listOfSet = new ArrayList<CardSet>();
+		try {
+			CardDao cdao = new CardDao();
+			CardSetDao csdao = new CardSetDao();
+			if(!csdao.loadCardSet()) {
+				listOfSet = new ArrayList<CardSet>();
+			}
+			else {
+				listOfSet = csdao.getListOfCardSet();
+				for (CardSet cardSet : listOfSet) {
+					cdao.loadCard(cardSet.getId());
+					cardSet.setListOfCard(cdao.getListOfCard());
+				}
+			}
+		}catch (SQLException ex) {
+			System.out.println("mainController _SQL " + ex.getMessage());
+		}catch (ClassNotFoundException ex) {
+			// TODO: handle exception
+			System.out.println("mainController _Class Not Found " + ex.getMessage());
+		}
 	}
 	public int getSize() {
 		return listOfSet.size();
@@ -30,6 +52,20 @@ public class MainController {
 		}
 		return false;
 	}
+	public void addNewSet(CardSet set) {
+		try {
+			CardSetDao dao = new CardSetDao();
+			dao.addNewSet(set);
+		}catch (SQLException ex) {
+			System.out.println("mainController _SQL " + ex.getMessage());
+		}catch (ClassNotFoundException ex) {
+			// TODO: handle exception
+			System.out.println("mainController _Class Not Found " + ex.getMessage());
+		}
+		finally {
+			System.out.println("Set create successfullly!");
+		}
+	}
 	public boolean updateSet(int id,CardSet set) {
 		if(getSetOfCard(id) != null) {
 			listOfSet.set(listOfSet.indexOf(getSetOfCard(id)), set);
@@ -44,6 +80,22 @@ public class MainController {
 		}
 		return false;
 	}
+	
+	public void deleteSetByID(int id) {
+		try {
+			CardSetDao dao = new CardSetDao();
+			dao.deleteSet(id);
+		}catch (SQLException ex) {
+			System.out.println("mainController _SQL " + ex.getMessage());
+		}catch (ClassNotFoundException ex) {
+			// TODO: handle exception
+			System.out.println("mainController _Class Not Found " + ex.getMessage());
+		}
+		finally {
+			System.out.println("delete successfullly!");
+		}
+	}
+	
 	
 	// ------
 }
