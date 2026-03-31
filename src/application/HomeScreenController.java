@@ -22,10 +22,10 @@ public class HomeScreenController extends SceneController{
 	flashCardController fcCtrl;
 	
 	public void switchToCreateMenu(ActionEvent e) throws IOException{
-		switchToScene(e, "CreateMenu.fxml", (CreateController c)->c.setMainController(controller,fcCtrl));
+		switchToScene(e, "/application/CreateMenu.fxml", (CreateController c)->c.setMainController(controller,fcCtrl));
 	}
 	public void switchToLoadedMenu(ActionEvent e)  throws IOException{
-		switchToScene(e,"ListOfSet.fxml",(ListOfSetController c)->c.setCardSetController(controller,fcCtrl));
+		switchToScene(e,"/application/ListOfSet.fxml",(ListOfSetController c)->c.setCardSetController(controller,fcCtrl));
 	}
 	public void setController(MainController controller, flashCardController fcCtrl) {
 		this.controller = controller;

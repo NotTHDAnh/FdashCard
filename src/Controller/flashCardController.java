@@ -21,6 +21,9 @@ public class flashCardController {
 		listOfCard = new CardSet();
 		listOfCard.setName(name);
 	}
+	public void setListOfCard(CardSet listOfCard) {
+		this.listOfCard = listOfCard;
+	}
 	
 	public CardSet getListOfCard() {
 		return listOfCard;

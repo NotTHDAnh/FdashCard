@@ -1,5 +1,6 @@
 package Controller;
 
+import model.Card;
 import model.CardDao;
 import model.CardSet;
 import model.CardSetDao;
@@ -12,7 +13,6 @@ public class MainController {
 	List<CardSet> listOfSet;
 	public MainController() {
 		try {
-			CardDao cdao = new CardDao();
 			CardSetDao csdao = new CardSetDao();
 			if(!csdao.loadCardSet()) {
 				listOfSet = new ArrayList<CardSet>();
@@ -20,6 +20,7 @@ public class MainController {
 			else {
 				listOfSet = csdao.getListOfCardSet();
 				for (CardSet cardSet : listOfSet) {
+					CardDao cdao = new CardDao();
 					cdao.loadCard(cardSet.getId());
 					cardSet.setListOfCard(cdao.getListOfCard());
 				}

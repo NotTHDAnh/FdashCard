@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import model.Card;
 import model.CardSet;
 
 public class ListOfSetController extends SceneController{
@@ -31,11 +32,11 @@ public class ListOfSetController extends SceneController{
  
 	
 	public void switchToCreate(ActionEvent e) throws IOException{
-		switchToScene(e, "CreateMenu.fxml",(CreateController c)-> c.setMainController(controller,fcCtrl));
+		switchToScene(e, "/application/CreateMenu.fxml",(CreateController c)-> c.setMainController(controller,fcCtrl));
 	}
 	
 	public void switchToLoaded(ActionEvent e) throws IOException{
-		switchToScene(e, "Cards.fxml",(CardController c)->c.setCardSets(chosenSet,controller,fcCtrl,0));
+		switchToScene(e, "/application/Cards.fxml",(CardController c)->c.setCardSets(chosenSet,controller,fcCtrl,0));
 	}
 
 	public void switchToHomeScreen(ActionEvent e) throws IOException{

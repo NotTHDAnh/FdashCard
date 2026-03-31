@@ -35,7 +35,7 @@ public class Main extends Application {
 		}
 
 		Scene scene = new Scene(root,Color.LIGHTBLUE);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
 
 		stage.setResizable(false);
 		stage.setScene(scene);

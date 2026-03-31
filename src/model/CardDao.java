@@ -54,7 +54,7 @@ public class CardDao {
 			con = DbUtils.getConnection();
 			String sql = "select description,hint,id "
 					+ "from tblCards "
-					+ "where id = ?";
+					+ "where set_id = ?";
 			stm = con.prepareStatement(sql);
 			stm.setInt(1, set_id);
 			rs = stm.executeQuery();

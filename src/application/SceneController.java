@@ -25,7 +25,7 @@ public class SceneController {
 	    root = loader.load();
 
 		scene = new Scene(root);
-		scene.getStylesheets().add(SceneController.class.getResource("application.css").toExternalForm());
+		scene.getStylesheets().add(SceneController.class.getResource("/application/application.css").toExternalForm());
 	    T controller = loader.getController();
 	    controllerAction.accept(controller);
 

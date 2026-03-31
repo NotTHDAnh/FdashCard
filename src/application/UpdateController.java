@@ -32,7 +32,7 @@ public class UpdateController extends SceneController{
 	}
 	
 	public void cancelUpdate(ActionEvent e) throws IOException{
-		switchToScene(e, "Cards.fxml",(CardController c)->c.setCardSets(fcCtrl.getListOfCard(),mainCtrl,fcCtrl,index));
+		switchToScene(e, "/application/Cards.fxml",(CardController c)->c.setCardSets(fcCtrl.getListOfCard(),mainCtrl,fcCtrl,index));
 	}
 	
 	@FXML void onSave(ActionEvent e) throws IOException {
@@ -52,17 +52,18 @@ public class UpdateController extends SceneController{
 		else {
 			card.setHint(termField.getText());
 			card.setDescription(defField.getText());
-			fcCtrl.updateCard(card, index);
+			fcCtrl.updateCard(card, card.getId());
 			mainCtrl.updateSet(fcCtrl.getListOfCard().getId(), fcCtrl.getListOfCard());
 			switchToScene(e, "Cards.fxml", (CardController c)->c.setCardSets(fcCtrl.getListOfCard(), mainCtrl,fcCtrl, index));
 		}
 	}
 
 	
-	public void setCardSets(MainController controller,flashCardController fcCtrl,int index) {
+	public void setCardSets(MainController controller,flashCardController fcCtrl,int index,CardSet chosenSet) {
 		this.mainCtrl = controller;
 		this.index = index;
 		this.fcCtrl = fcCtrl;
+		this.fcCtrl.setListOfCard(chosenSet);
 		card = fcCtrl.getListOfCard().getListOfCard().get(index);
 		this.termField.setText(card.getHint());
 		this.defField.setText(card.getDescription());

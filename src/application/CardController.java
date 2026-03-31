@@ -58,7 +58,7 @@ public class CardController extends SceneController{
 	}
 	
 	public void switchToUpdate(ActionEvent e) throws IOException{
-		switchToScene(e, "Editing.fxml", (UpdateController c)->c.setCardSets(controller,fcCtrl, index));
+		switchToScene(e, "Editing.fxml", (UpdateController c)->c.setCardSets(controller,fcCtrl, index,set));
 	}
 	
 	public void setCardSets(CardSet set,MainController controller,flashCardController fcCtrl,int index) {

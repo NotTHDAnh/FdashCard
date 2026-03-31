@@ -4,6 +4,8 @@ bin/
 .settings/
 .classpath
 .project
+db.properties
+
 
 
 /FdashCard/nbproject/private/
