@@ -39,6 +39,8 @@ FdashCard/
 │   ├── utils/
 │   ├── resources/
 │   └── db.properties
+├── database/
+│   └── create_database.sql
 ├── bin/
 ├── README.md
 └── sqljdbc4.jar
@@ -59,7 +61,7 @@ Before running this project, make sure you have:
 ### Recommended
 - SQL Server Management Studio (SSMS)
 
-SSMS is optional, but it makes database setup easier.
+SSMS is optional, but it makes database setup easier on Windows.
 
 ---
 
@@ -69,10 +71,13 @@ This project uses **Microsoft SQL Server**.
 
 ### 1. Create the database
 
-```sql
-CREATE DATABASE FdashCard;
-GO
+A database creation script is already included in the project:
+
+```text
+database/create_database.sql
 ```
+
+Run that file first in SQL Server.
 
 ### 2. Run your table creation script
 After creating the database, run your `CREATE TABLE` statements and optional sample data scripts.
@@ -105,11 +110,15 @@ For GitHub, it is better to share:
 - table creation scripts
 - optional sample data scripts
 
+If your included database script still contains machine-specific file paths, another user may need to edit it before running it.
+
 ---
 
 ## Running the Project from Source
 
-### Compile
+### Windows
+
+#### Compile
 
 ```powershell
 New-Item -ItemType Directory -Force bin
@@ -117,7 +126,7 @@ $files = Get-ChildItem -Recurse -Path .\src -Filter *.java | ForEach-Object { $_
 javac --module-path "C:\java-fx_25\lib" --add-modules javafx.controls,javafx.fxml -cp ".;.\sqljdbc4.jar" -d bin $files
 ```
 
-### Copy resources
+#### Copy resources
 
 ```powershell
 New-Item -ItemType Directory -Force .\bin\application
@@ -127,11 +136,63 @@ Copy-Item .\src\db.properties .\bin\db.properties -Force
 Copy-Item .\src\resources -Destination .\bin\resources -Recurse -Force
 ```
 
-### Run
+#### Run
 
 ```powershell
 java --module-path "C:\java-fx_25\lib" --add-modules javafx.controls,javafx.fxml -cp ".;bin;.\sqljdbc4.jar" application.Main
 ```
+
+### Linux
+
+#### Compile
+
+```bash
+mkdir -p bin
+javac --module-path "/path/to/javafx/lib" --add-modules javafx.controls,javafx.fxml -cp "./sqljdbc4.jar" -d bin $(find ./src -name "*.java")
+```
+
+#### Copy resources
+
+```bash
+mkdir -p ./bin/application
+cp ./src/application/*.fxml ./bin/application/
+cp ./src/application/*.css ./bin/application/
+cp ./src/db.properties ./bin/db.properties
+cp -r ./src/resources ./bin/
+```
+
+#### Run
+
+```bash
+java --module-path "/path/to/javafx/lib" --add-modules javafx.controls,javafx.fxml -cp "./bin:./sqljdbc4.jar" application.Main
+```
+
+### macOS
+
+#### Compile
+
+```bash
+mkdir -p bin
+javac --module-path "/path/to/javafx/lib" --add-modules javafx.controls,javafx.fxml -cp "./sqljdbc4.jar" -d bin $(find ./src -name "*.java")
+```
+
+#### Copy resources
+
+```bash
+mkdir -p ./bin/application
+cp ./src/application/*.fxml ./bin/application/
+cp ./src/application/*.css ./bin/application/
+cp ./src/db.properties ./bin/db.properties
+cp -r ./src/resources ./bin/
+```
+
+#### Run
+
+```bash
+java --module-path "/path/to/javafx/lib" --add-modules javafx.controls,javafx.fxml -cp "./bin:./sqljdbc4.jar" application.Main
+```
+
+> On Linux and macOS, replace `/path/to/javafx/lib` with the actual location of your JavaFX SDK.
 
 ---
 
@@ -146,14 +207,22 @@ java --module-path "C:\java-fx_25\lib" --add-modules javafx.controls,javafx.fxml
 
 ### VM Arguments for JavaFX
 
+#### Windows
+
 ```bash
 --module-path "C:\java-fx_25\lib" --add-modules javafx.controls,javafx.fxml
+```
+
+#### Linux/macOS
+
+```bash
+--module-path "/path/to/javafx/lib" --add-modules javafx.controls,javafx.fxml
 ```
 
 Optional:
 
 ```bash
---module-path "C:\java-fx_25\lib" --add-modules javafx.controls,javafx.fxml --enable-native-access=javafx.graphics
+--enable-native-access=javafx.graphics
 ```
 
 ---
@@ -165,24 +234,7 @@ Optional:
 - SQL Server must be installed and configured before running the app
 - SQL Server Management Studio is optional
 - If resources such as `.fxml`, `.css`, or images are not copied correctly, the app may fail at runtime
-
----
-
-## Security Note
-
-Do not hardcode real database credentials in source code for a public repository.
-
-Recommended:
-- keep `db.properties` out of Git
-- upload a template file like `db.properties.example`
-
-Example:
-
-```properties
-db.url=jdbc:sqlserver://localhost:1433;databaseName=FdashCard;encrypt=true;trustServerCertificate=true
-db.user=YOUR_USERNAME
-db.password=YOUR_PASSWORD
-```
+- The included database creation file should be run before starting the application
 
 ---
 
