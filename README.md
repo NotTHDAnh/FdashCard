@@ -91,8 +91,6 @@ db.user=SA
 db.password=12345
 ```
 
-> Do not upload your real `db.properties` to public GitHub.
-
 ---
 
 ## Important Note
