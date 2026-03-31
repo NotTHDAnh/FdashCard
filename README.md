@@ -87,8 +87,8 @@ Create a file named `db.properties` inside `src/`:
 
 ```properties
 db.url=jdbc:sqlserver://localhost:1433;databaseName=FdashCard;encrypt=true;trustServerCertificate=true
-db.user=SA
-db.password=12345
+db.user=YOUR_USERNAME
+db.password=YOUR_PASSWORD
 ```
 
 ---

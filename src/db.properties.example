@@ -1,4 +1,4 @@
 db.name=FdashCard
-db.user=SA
-db.password=12345
+db.user=YOUR_USERNAME
+db.password=YOUR_PASSWORD
 db.url=jdbc:sqlserver://localhost:1433;databaseName=FdashCard;encrypt=true;trustServerCertificate=true
