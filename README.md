@@ -236,16 +236,6 @@ Optional warning suppression:
 
 ---
 
-## Security Note
-
-Do not upload your real database credentials to a public repository.
-
-Recommended:
-- keep `src/db.properties` local
-- upload `src/db.properties.example` as the template
-
----
-
 ## Author
 
 Developed as a JavaFX and SQL Server learning project.
